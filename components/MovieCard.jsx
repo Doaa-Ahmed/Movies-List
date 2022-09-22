@@ -4,10 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { posterLoader } from "../helpers/posterLoader";
 
 export default function MovieCard({ movie }) {
-   console.log(movie);
 
    return (
-      <div className="shadow-lg rounded-lg flex flex-col">
+      <div className="shadow-lg rounded-lg flex flex-col transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
          <a href={`/movie/${movie.id}`}>
             {movie.poster_path ? <Image loader={posterLoader} width={500} height={500} className="rounded-t-lg" src={movie.poster_path} alt={movie.title} /> : <></>}
          </a>

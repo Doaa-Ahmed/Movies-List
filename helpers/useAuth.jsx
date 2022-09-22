@@ -30,14 +30,22 @@ export const useAuth = () => {
 const useProvideAuth = () => {
    const [loggedIn, setLoggedIn] = useState(false);
 
+   useEffect(() => {
+      // Perform localStorage action
+      setLoggedIn(localStorage.getItem('loggedIn') || false)
+   }, [])
+
    const login = () => {
+      localStorage.setItem("loggedIn", true)
       setLoggedIn(true);
    };
 
    const logout = () => {
+      localStorage.setItem("loggedIn", false)
       setLoggedIn(false);
    };
    const signup = () => {
+      localStorage.setItem("loggedIn", true)
       setLoggedIn(true);
    };
 

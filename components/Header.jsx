@@ -22,12 +22,11 @@ export default function Header() {
                   </Link>
                   <p className="ml-1 inline-block align-middle font-bold text-dark-purple">Movies</p>
                </div>
-               <div className="hidden md:flex md:space-x-8 sm:items-center text-dark-purple">
-                  <Link href="/#" className="inline-flex items-center px-1 pt-1 text-sm font-medium no-underline hover:underline"><a>Docs</a></Link>
-                  <Link href="/movies" className="inline-flex items-center px-1 pt-1 text-sm font-medium" aria-current="page"><a>Movies</a></Link>
-                  <Link href="/#" className="inline-flex items-center px-1 pt-1 text-sm font-medium"><a>Pricing</a></Link>
-               </div>
-
+               {auth.loggedIn ?
+                  <div className="hidden md:flex md:space-x-8 sm:items-center text-dark-purple hover:text-light-purple">
+                     <Link href="/movies"><a>Movies</a></Link>
+                  </div> : <></>
+               }
                <div className="flex flex-row">
                   {auth.loggedIn ?
                      <button className="bg-dark-purple text-white text-base font-semibold py-2 px-4 rounded" onClick={() => { auth.logout(); router.push("/login") }}>Logout</button>

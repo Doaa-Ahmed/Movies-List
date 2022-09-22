@@ -19,8 +19,7 @@ export default function Movie() {
          setMovie(response.data);
       });
    }, [router.isReady, id]);
-   console.log(movie);
-   console.log(movie.genres);
+
    if (Object.keys(movie).length === 0) return
 
    return (

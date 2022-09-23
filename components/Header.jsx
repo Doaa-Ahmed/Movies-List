@@ -22,10 +22,10 @@ export default function Header() {
                   </Link>
                   <p className="ml-1 inline-block align-middle font-bold text-dark-purple">Movies</p>
                </div>
-               {auth.loggedIn ?
+               {auth.loggedIn &&
                   <div className="hidden md:flex md:space-x-8 sm:items-center text-dark-purple hover:text-light-purple">
-                     <Link href="/movies"><a>Movies</a></Link>
-                  </div> : <></>
+                     <Link href="/movies-list"><a>Movies</a></Link>
+                  </div>
                }
                <div className="flex flex-row">
                   {auth.loggedIn ?
